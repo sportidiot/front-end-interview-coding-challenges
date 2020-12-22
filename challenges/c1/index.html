@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,7 +8,60 @@
 
     <style>
         /* Write your CSS code here */
-    
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+
+        }
+
+        .main-area{
+            position: relative;
+            padding: 20px 40px;
+            cursor: help;
+            border: dashed blue 1px;
+
+        }
+
+        .main-area .my-tooltip{
+            padding: 10px;
+            visibility: hidden;
+            opacity: 0;
+            transform: translate(-50%, -100%) scale(0);
+            position: absolute;
+            color: white;
+            top: -15px;
+            left: 50%;
+            background: #333333;
+            border-radius: 8px;
+            border: 1px solid #484848;
+            transition: opacity 0.4s ease-in-out, transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: block;
+
+        }
+
+        .main-area .my-tooltip:after{
+            content:"";
+            width: 0;
+            height: 0;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-top: 12px solid #333333;
+            position: absolute;
+            top:100%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+
+
+        .main-area:hover .my-tooltip{
+            opacity: 1;
+            visibility: visible;
+            transform: translate(-50%, -100%) scale(1);
+
+        }
     </style>
 
 </head>
@@ -16,7 +69,8 @@
 
     <!-- Modify the mark up to suit your needs -->
     <div class="main-area">
-        Hover me to show pop-up
+        <div class="my-tooltip">I'm a popup</div>
+        Hover me to show popup
     </div>
     
 </body>

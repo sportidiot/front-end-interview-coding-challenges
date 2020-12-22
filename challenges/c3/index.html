@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Challenge 3</title>
+
+    <style>
+        /* Write your CSS code here */
+        main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+            background: #cccccc;
+
+        }
+        .top-container
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 50%;
+            overflow: hidden;
+            min-height: 30px;
+        }
+        .bottom-container
+        {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            min-height: 30px;
+
+
+        }
+        .fancy-text {
+            font-family: sans-serif;
+            text-transform: uppercase;
+            font-size: 30px;
+            position: relative;
+            width: 100%;
+            text-align: center;
+            height: 60px;
+        }
+
+        .fancy-text h1 {
+
+            margin: 0;
+            height: fit-content;
+            line-height: 1;
+        }
+
+        .fancy-text .top {
+            color: red;
+            transform: translate3d(0, 0, 0);
+            /*Enabled Graphics card ^^*/
+            -webkit-animation: top-slide-in 5s infinite;
+            -moz-animation:    top-slide-in 5s infinite;
+            -o-animation:      top-slide-in 5s infinite;
+            animation:         top-slide-in 5s infinite;
+        }
+
+        .fancy-text .bottom {
+            color: black;
+            transform: translate3d(0, -50%, 0);
+            /*Enabled Graphics card ^^*/
+            -webkit-animation: bottom-slide-in 5s infinite;
+            -moz-animation:    bottom-slide-in 5s infinite;
+            -o-animation:      bottom-slide-in 5s infinite;
+            animation:         bottom-slide-in 5s infinite;
+        }
+
+        @keyframes top-slide-in {
+            0%   { transform: translate3d(-100vw, 0, 0) }
+            30%   { transform: translate3d(0, 0, 0) }
+            60%   { transform: translate3d(0, 0, 0) }
+            100% {  transform: translate3d(100vw, 0, 0) }
+        }
+        @keyframes bottom-slide-in {
+            0%   { transform: translate3d(-150vw, -50%, 0) }
+            30%   { transform: translate3d(0, -50%, 0) }
+            70%   { transform: translate3d(0, -50%, 0) }
+            100% {  transform: translate3d(100vw, -50%, 0) }
+        }
+    </style>
+
+</head>
+<body>
+
+    <main>
+        <div class="fancy-text">
+            <div class="top-container"><h1 class="top">Awesome Alpha</h1></div>
+            <div class="bottom-container"><h1 class="bottom">Awesome Alpha</h1></div>
+        </div>
+    </main>
+    
+</body>
+</html>
